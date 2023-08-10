@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react'
-import Gallery from '../Gallery'
+import { Routes, Route, Link } from "react-router-dom"
+import DetailsPage from '../DetailsPage'
+import CurrencyPage from '../CurrencyPage'
+import HomePage from '../HomePage'
 import './styles.css'
 
 export default function App() {
     //Store API data here
     const [articles, setArticles] = useState([])
+    const [prices, setPrices] = useState([])
+    const [detailsData, setDetailsData] = useState({})
     //Query the API component mount
     useEffect(() => {
 
@@ -28,7 +33,7 @@ export default function App() {
                 },
             };
 
-            const apiUrl1 = 'https://crypto-news16.p.rapidapi.com/news/top/50';
+            const apiUrl1 = 'https://crypto-news16.p.rapidapi.com/news/top/10';
             const apiUrl2 = 'https://investing-cryptocurrency-markets.p.rapidapi.com/coins/list'
             
             // Make the API request
@@ -47,20 +52,19 @@ export default function App() {
                     console.error('There was a problem with the request:', error);
                 });
             
-            // fetch(apiUrl2, requestOptions2)
-            //     .then(response2 => {
-            //         if (!response2.ok) {
-            //             throw new Error('Network response was not ok');
-            //         }
-            //         return response2.json();
-            //     })
-            //     .then(data2 => {
-            //         setArticles(data2)
-            //         console.log(data2)
-            //     })
-            //     .catch(error => {
-            //         console.log('There was a problem with the request:', error);
-            //     })
+            fetch(apiUrl2, requestOptions2)
+                .then(response2 => {
+                    if (!response2.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response2.json();
+                })
+                .then(data2 => {
+                    setPrices(data2)
+                })
+                .catch(error => {
+                    console.log('There was a problem with the request:', error);
+                })
 
         }
         //Call the async function
@@ -68,8 +72,37 @@ export default function App() {
     },[])
     return (
         <>
-            <h1>Crypto Feed APP</h1>
-            <Gallery articles={articles} />
+            <nav className="">
+                <div className="">
+                    <div className="relative flex items-center justify-between">
+                        <div className="flex-shrink-0">
+                            <Link to="/">
+                                <h2 className="text-white font-bold text-2xl">Cyrpto Feed App</h2>
+                            </Link>
+                        </div>
+                        <div className="flex-grow">
+                            <ul className="flex justify-end text-gray-300 text-lg font-medium">
+                                <li>
+                                <Link to="/search">
+                                    <h4 className="px-3 py-2 hover:text-white">Coin List</h4>
+                                </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <Routes>
+                <Route path="/" element={
+                    <HomePage 
+                        articles={articles}
+                        setDetailsData={setDetailsData}
+                    />} 
+                />
+                <Route path="/details" element={<DetailsPage {...detailsData} />} />
+                {/* <Route path="/coins" element={<CurrencyPage {...priceData} />} /> */}
+                
+            </Routes>
         </>
         
     )
