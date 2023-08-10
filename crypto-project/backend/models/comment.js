@@ -7,11 +7,11 @@ const commentSchema = new mongoose.Schema(
         name: { type: String, required: true },
         content: { type: String, required: true },
         title: { type: String, maxLength: 30 },
-        artworkId: { type: Number, required: true }
+        articleId: { type: String, required: true }
     },
     { timestamps: true }
 );
 
-// Export the schema as a Monogoose model. 
+// Export the schema as a Mongoose model. 
 // The Mongoose model will be accessed in `models/index.js`
 module.exports = mongoose.model('Comment', commentSchema);

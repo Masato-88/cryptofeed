@@ -5,7 +5,7 @@ const cors = require ('cors')
 const path = require ('path')
 
 
-//require the db connection and models
+//Require the db connection and models
 const db = require('./models')
 
 
