@@ -11,13 +11,13 @@ const jwt = require('jwt-simple')
 const express = require('express')
 // Router allows us to handle routing outside of server.js
 const router = express.Router()
-const User = require('../models/user.js')
+
 
 
 /* Require the db connection and models
 --------------------------------------------------------------- */
 const db = require('../models')
-
+const User = db.User
 
 /* Require the JWT config
 --------------------------------------------------------------- */

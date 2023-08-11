@@ -28,3 +28,4 @@ export async function logIn(user) {
     const { data } = await axios.post('/api/users/login', user)
     return data
 }
+

@@ -4,8 +4,8 @@ import DetailsPage from '../DetailsPage'
 import CurrencyPage from '../CurrencyPage'
 import HomePage from '../HomePage'
 import AuthFormPage from '../AuthFormPage'
-
 import './styles.css'
+
 
 export default function App() {
     //Store API data here
@@ -72,6 +72,7 @@ export default function App() {
         //Call the async function
         getData()
     },[])
+
     return (
         <>
             <nav className="">
@@ -85,9 +86,19 @@ export default function App() {
                         <div className="flex-grow">
                             <ul className="flex justify-end text-gray-300 text-lg font-medium">
                                 <li>
-                                <Link to="/coins">
-                                    <h4 className="px-3 py-2 hover:text-white">Coin List</h4>
-                                </Link>
+                                    <Link to="/coins">
+                                        <h4 className="px-3 py-2 hover:text-white">Coin List</h4>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/auth/signup">
+                                        <h4 className="px-3 py-2 hover:text-white">Sign Up</h4>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/auth/login">
+                                        <h4 className="px-3 py-2 hover:text-white">Log In</h4>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
