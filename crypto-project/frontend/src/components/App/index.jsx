@@ -3,6 +3,8 @@ import { Routes, Route, Link } from "react-router-dom"
 import DetailsPage from '../DetailsPage'
 import CurrencyPage from '../CurrencyPage'
 import HomePage from '../HomePage'
+import AuthFormPage from '../AuthFormPage'
+
 import './styles.css'
 
 export default function App() {
@@ -16,7 +18,7 @@ export default function App() {
         //Define an async function to JSONify the query response
         async function getData() {
             const rapidApiKey = `${import.meta.env.VITE_X_RapidAPI_Key}`;
-            
+            console.log(rapidApiKey)
             const requestOptions1 = {
                 method: 'GET', // HTTP method (GET, POST, etc.)
                 headers: {
@@ -83,7 +85,7 @@ export default function App() {
                         <div className="flex-grow">
                             <ul className="flex justify-end text-gray-300 text-lg font-medium">
                                 <li>
-                                <Link to="/search">
+                                <Link to="/coins">
                                     <h4 className="px-3 py-2 hover:text-white">Coin List</h4>
                                 </Link>
                                 </li>
@@ -100,7 +102,8 @@ export default function App() {
                     />} 
                 />
                 <Route path="/details" element={<DetailsPage {...detailsData} />} />
-                {/* <Route path="/coins" element={<CurrencyPage {...priceData} />} /> */}
+                <Route path="/coins" element={<CurrencyPage prices={prices} />} />
+                <Route path="/auth/:formType" element={<AuthFormPage />} />
                 
             </Routes>
         </>

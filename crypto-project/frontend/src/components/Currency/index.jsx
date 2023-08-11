@@ -1,10 +1,11 @@
 export default function Currency({ priceData }) {
-
+console.log(priceData)
     return (
         <>
             <figure>
-                <h2>{priceData.data.screen_data.crypto_data.name}</h2>
-                <h2>{priceData.data.screen_data.crypto_data.inst_price_usd}</h2>
+                <h2 className="content-space-around">
+                    {priceData.name} {priceData.change_percent_1d} ${priceData.inst_price_usd}
+                </h2>
             </figure>
         </>
     )

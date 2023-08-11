@@ -6,8 +6,12 @@ const commentSchema = new mongoose.Schema(
     {
         name: { type: String, required: true },
         content: { type: String, required: true },
-        title: { type: String, maxLength: 30 },
-        articleId: { type: String, required: true }
+        articleId: { type: String, required: true },
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'User',
+        },
     },
     { timestamps: true }
 );
