@@ -8,7 +8,7 @@ export default function AuthFormPage() {
         email:"",
         password:""
     })
-
+console.log(formData)
     const handleInputChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value })
     }

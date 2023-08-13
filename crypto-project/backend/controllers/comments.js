@@ -49,6 +49,7 @@ router.get('/:articleId', function (req, res) {
 //Create Route (POST/Create): This route receives the POST request sent from the new route
 //creates a new comment document using the request body
 router.post('/', authMiddleware, (req, res) => {
+    console.log(req.body)
     // Perform any actions that require authorization
     db.Comment.create({
         ...req.body,

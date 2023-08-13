@@ -4,7 +4,7 @@ const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken
 
 
 export async function getComments(articleId) {
-    const { data } = await axios.get(`/api/comments/art/${articleId}`)
+    const { data } = await axios.get(`/api/comments/${articleId}`)
     return data
 }
 export async function postComment(comment) {
