@@ -10,7 +10,7 @@ export default function CurrencyPage({ prices }) {
     }
 
     return (
-        <div className="list">
+        <div className="list text-white">
             <h1>Currency Page</h1>
             {listContent}
         </div>

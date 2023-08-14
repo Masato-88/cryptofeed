@@ -9,7 +9,7 @@ export default function Comment({ data, refreshComments, handleSubmit }) {
         articleId: data.articleId
        
     })
-console.log(data)
+
     // Update the form fields as the user types
     function handleInputChange(event) {
         setEditFormData({

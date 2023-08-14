@@ -9,7 +9,7 @@ export default function News({ articles, updateDetails }) {
     }
 
     return (
-        <div className="news">
+        <div className="news flex flex-col">
             {newsContent}
         </div>
     )

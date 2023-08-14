@@ -75,12 +75,12 @@ export default function App() {
 
     return (
         <>
-            <nav className="">
+            <nav className="text-[white] items-center px-4">
                 <div className="">
                     <div className="relative flex items-center justify-between">
                         <div className="flex-shrink-0">
                             <Link to="/">
-                                <h2 className="text-white font-bold text-2xl">Cyrpto Feed App</h2>
+                                <h2 className="font-bold text-2xl">Cyrpto Feed App</h2>
                             </Link>
                         </div>
                         <div className="flex-grow">

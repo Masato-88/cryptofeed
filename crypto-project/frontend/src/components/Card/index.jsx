@@ -21,9 +21,10 @@ export default function Card({ articleData, updateDetails }) {
         <Link
             to={"/details"}
             onClick={() =>  updateDetails(articleData) }
+            className="block p-3 border-b border-gray-200"
         >
-            <figure>
-                <h2>{articleData.title}</h2>
+            <figure className="text-white/75">
+                <h2 className="font-bold">{articleData.title}</h2>
                 <time className="card-date">{timeAgo}</time>
             </figure>
         </Link>
