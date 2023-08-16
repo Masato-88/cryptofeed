@@ -19,7 +19,6 @@ export default function commentSection({ data }) {
             .then(comments => setComments(comments))
     }, [])
 
-console.log(comments)
     // Update the form fields as the user types
     function handleInputChange(event) {
         setCreateFormData({
@@ -48,6 +47,7 @@ console.log(comments)
         // create the comment in the backend
         postComment(createFormData)
             .then(() => refreshComments())
+            
     }
 
     // conditionally render comments
@@ -66,12 +66,12 @@ console.log(comments)
     // conditionally display the text of the create form button
     let btnText = 'Create'
     if (showCreateForm) {
-        btnText = 'Close'
+        btnText = 'Cancel'
     }
 
     return (
-        <div className='comment-section bg-gray-300 rounded-lg p-4 pb-10 mt-4 space-y-4 relative'>
-            <h1 className='text-xl font-bold'>Viewer Insights</h1>
+        <div className='comment-section bg-gray-700 rounded-lg p-10 pb-10 mt-8 space-y-4 relative w-[70vw]'>
+            <h1 className='text-xl font-bold'>Comments</h1>
             <button
                 onClick={toggleCreateForm}
                 className="top-0 right-5 absolute text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2"
