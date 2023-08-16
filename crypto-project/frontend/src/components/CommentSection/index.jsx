@@ -70,7 +70,7 @@ export default function commentSection({ data }) {
     }
 
     return (
-        <div className='comment-section bg-gray-700 rounded-lg p-10 pb-10 mt-8 space-y-4 relative w-[70vw]'>
+        <div className='comment-section bg-gray-600 rounded-lg p-10 pb-10 mt-8 space-y-4 relative w-[80vw]'>
             <h1 className='text-xl font-bold'>Comments</h1>
             <button
                 onClick={toggleCreateForm}
@@ -81,7 +81,7 @@ export default function commentSection({ data }) {
             {
                 showCreateForm && <form
                     onSubmit={handleSubmit}
-                    className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto text-right">
+                    className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[60vw] mx-auto text-right text-black">
                     <input
                         name="name"
                         className="px-2 py-1 w-full bg-gray-100"
@@ -93,13 +93,13 @@ export default function commentSection({ data }) {
                     <textarea
                         name="content"
                         className="p-2 my-2 h-[100px] w-full bg-gray-100"
-                        placeholder="Share your thoughts!"
+                        placeholder="Leave a comment"
                         value={createFormData.content}
                         onChange={handleInputChange}
                     />
                     <button
                         type="submit"
-                        className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                        className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-blue-700 rounded cursor-pointer mr-2">
                         Post
                     </button>
                 </form>
