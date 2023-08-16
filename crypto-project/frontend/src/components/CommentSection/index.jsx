@@ -19,6 +19,7 @@ export default function commentSection({ data }) {
             .then(comments => setComments(comments))
     }, [])
 
+console.log(comments)
     // Update the form fields as the user types
     function handleInputChange(event) {
         setCreateFormData({
@@ -47,7 +48,6 @@ export default function commentSection({ data }) {
         // create the comment in the backend
         postComment(createFormData)
             .then(() => refreshComments())
-            
     }
 
     // conditionally render comments
@@ -66,7 +66,7 @@ export default function commentSection({ data }) {
     // conditionally display the text of the create form button
     let btnText = 'Create'
     if (showCreateForm) {
-        btnText = 'Cancel'
+        btnText = 'Close'
     }
 
     return (

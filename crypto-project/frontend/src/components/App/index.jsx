@@ -18,6 +18,7 @@ export default function App() {
         //Define an async function to JSONify the query response
         async function getData() {
             const rapidApiKey = `${import.meta.env.VITE_X_RapidAPI_Key}`;
+            console.log(rapidApiKey)
             const requestOptions1 = {
                 method: 'GET', // HTTP method (GET, POST, etc.)
                 headers: {
@@ -74,12 +75,12 @@ export default function App() {
 
     return (
         <>
-            <nav className="text-[white] items-center px-5 p-4">
+            <nav className="text-[white] items-center px-4">
                 <div className="">
                     <div className="relative flex items-center justify-between">
                         <div className="flex-shrink-0">
                             <Link to="/">
-                                <h2 className="font-bold text-2xl">Cyrpto Feed</h2>
+                                <h2 className="font-bold text-2xl">Cyrpto Feed App</h2>
                             </Link>
                         </div>
                         <div className="flex-grow">
