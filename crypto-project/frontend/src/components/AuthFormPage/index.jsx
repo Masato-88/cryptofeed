@@ -8,7 +8,6 @@ export default function AuthFormPage() {
         email:"",
         password:""
     })
-console.log(formData)
     const handleInputChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value })
     }
@@ -37,15 +36,15 @@ console.log(formData)
 
     return (
         <div className="flex items-center justify-center h-[90vh]">
-            <div className="bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-md">
-                <h2 className="text-3xl text-center font-bold text-gray-100 mb-8">{actionText}</h2>
-                <form className="space-y-6" onSubmit={handleSubmit}>
+            <div className="bg-blue-900 rounded-lg shadow-xl p-8 w-full max-w-md">
+                <h2 className="text-3xl text-center font-bold text-gray-200 mb-10">{actionText}</h2>
+                <form className="space-y-7" onSubmit={handleSubmit}>
                     <div>
                         <label className="block text-gray-100 font-bold mb-2" htmlFor="email">
                             Email
                         </label>
                         <input
-                            className="w-full p-2 text-gray-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
+                            className="w-full p-2 text-black rounded-md"
                             id="email"
                             name="email"
                             type="email"
@@ -60,7 +59,7 @@ console.log(formData)
                             Password
                         </label>
                         <input
-                            className="w-full p-2 text-gray-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
+                            className="w-full p-2 text-gray-900 rounded-md"
                             id="password"
                             name="password"
                             type="password"
@@ -74,7 +73,7 @@ console.log(formData)
                     <div>
                         <button
                             type="submit"
-                            className="w-full py-2 px-4 bg-green-700 text-gray-100 rounded-md hover:bg-green-800 transition duration-300">
+                            className="w-full py-2 px-4 bg-green-700 text-gray-100 rounded-md">
                             {actionText}
                         </button>
                     </div>

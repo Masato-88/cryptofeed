@@ -20,7 +20,6 @@ export default function Comment({ data, refreshComments, handleSubmit }) {
 
     // Execute form submission logic
     function handleEdit(event) {
-        console.log(event.target.id)
         // prevent the page from reloading
         event.preventDefault()
         // close the form
@@ -84,21 +83,21 @@ export default function Comment({ data, refreshComments, handleSubmit }) {
                     className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
                     Close
                 </button>
-                {/* <button
+                <button
                     type="submit"
                     onClick={handleEdit}
                     id={data._id}
                     className="bg-blue-700 hover:bg-blue-800 font-bold py-2 px-4 mr-2 rounded cursor-pointer text-white"
                 >
                     Edit
-                </button> */}
-                <button
+                </button>
+                {/* <button
                     type="submit"
                     onClick={handleEdit}
                     id={data._id}
                     className="text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2">
                     Post
-                </button>
+                </button> */}
             </div>
         </form>
     }
